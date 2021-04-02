@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" href="./img/icons/favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.css" integrity="sha384-q94+BZtLrkL1/ohfjR8c6L+A6qzNH9R2hBLwyoAfu3i/WCvQjzL2RQJ3uNHDISdU" crossorigin="anonymous">
+	<link rel="stylesheet" href="index.css">
+	<title>Chess player</title>
+</head>
+
+<body>
+	<div id="app">
+		<div class="container">
+			<div class="flex-wrapper">
+
+				<div id="board" style="width:50%"></div>
+
+				<br>
+				<div class="btns-wrapper">
+					<button id="undoMove" class="invisible">&lt;</button>
+					<button id="playMove" class="hidden">&gt;</button>
+				</div>
+
+				<!-- Button trigger modal -->
+				<button type="button" id="trigger-moves-modal" class="btn btn-primary" data-toggle="modal" data-target="#startPlayModal">
+					Start game
+				</button>
+			</div>
+		</div>
+	</div>
+
+	<!-- Modal -->
+	<div class="modal fade" id="startPlayModal" tabindex="-1" aria-labelledby="startPlayModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="startPlayModalLabel">Enter the moves of the game</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<textarea name="" id="pgnText" cols="60" rows="10">1. d4 d5 2. f4 Nc6 3. Qd3 Qd6 4. Nc3 Nb4 5. a3 Nxd3+ 6. exd3 Nf6</textarea>
+				</div>
+				<div class="modal-footer">
+					<button id="confirm-moves" type="button" class="btn btn-primary">Confirm</button>
+					<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- libs -->
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+	<script src="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.js" integrity="sha384-8Vi8VHwn3vjQ9eUHUxex3JSN/NFqUg3QbPyX8kWyb93+8AC/pPWTzj+nHtbC5bxD" crossorigin="anonymous"></script>
+	<script src="libs/chess.js"></script>
+	<script src="index.js"></script>
+</body>
+
+</html>
